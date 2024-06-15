@@ -1,6 +1,6 @@
 // express server set up
 
-// import essential modules: 'express' and route handlers for 'notes.js' and 'html.js'
+// imports essential modules: 'express' and route handlers for 'notes.js' and 'html.js'
 const express = require("express");
 const apiRoutes = require("./routes/notes");
 const htmlRoutes = require("./routes/html");
