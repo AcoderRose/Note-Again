@@ -1,5 +1,3 @@
-// API route handling for notes set up
-
 // Import essential modules: 'express', 'fs', 'path', and 'uuid'
 const express = require("express");
 const fs = require("fs");
@@ -25,6 +23,7 @@ const writeToFile = (filePath, content) =>
     )
   );
 
+// API route handling for notes set up
 // GET /api/notes should read the db.json file and return all saved notes as JSON.
 router.get("/", async (req, res) => {
   try {
@@ -52,4 +51,19 @@ router.post("/", async (req, res) => {
   }
 });
 
+// DELETE /api/notes/:id should receive a query parameter that contains the unique ID in order to delete the note.
+router.delete("/:id", async (req, res) => {
+  try {
+    const noteId = req.params.id; // note ID gotten from request parameters
+    const data = await readFromFile(path.join(__dirname, "../db/db.json"));
+    const notes = JSON.parse(data);
+    const updatedNotes = notes.filter((note) => note.id !== noteId); // note filtered out in order to delete it
+    await writeToFile(path.join(__dirname, "../db/db.json"), updatedNotes);
+    res.json({ message: "Note has been deleted successfully." }); //success message sent
+  } catch (err) {
+    res.status(500).json({ error: "Oops! Failed to delete note." }); //error message sent
+  }
+});
+
+// the router object is exported for use in other areas of application
 module.exports = router;
