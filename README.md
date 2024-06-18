@@ -30,7 +30,7 @@ To install Note-Again:
 
 - Once connected to the server, you will see a success message. Open your browser and go to http://localhost:3001 to access the application.
 
-![Screenshot of Note-Again]()
+![Screenshot of Note-Again](./public/assets/images/screenshot-of-website.png)
 
 [Link to Deployed Website](https://note-again.onrender.com/)
 
