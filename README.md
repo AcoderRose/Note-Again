@@ -32,8 +32,12 @@ To install Note-Again:
 
 ![Screenshot of Note-Again]()
 
+[Link to Deployed Website](https://note-again.onrender.com/)
+
+[Link to GitHub repository](https://github.com/AcoderRose/Note-Again)
+
 ## Credits
 
-[Adam Rosenberg](https://github.com/AcoderRose)
+[Kaila Ronquillo](https://github.com/girlnotfound)
 
 [Ryan Petersen](https://github.com/RyanPetersen-89)
